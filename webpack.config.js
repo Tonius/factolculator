@@ -10,6 +10,19 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.(eot|woff|woff2|ttf|svg|png)(\?.*)?$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[hash].[ext]'
+                    }
+                }
             }
         ]
     },
@@ -28,6 +41,7 @@ module.exports = {
     devServer: {
         host: '0.0.0.0',
         port: 8000,
-        historyApiFallback: true
+        historyApiFallback: true,
+        disableHostCheck: true
     }
 };

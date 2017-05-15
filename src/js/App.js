@@ -1,9 +1,15 @@
 import React from 'react';
 
+import Calculator from 'src/Calculator';
+
 
 const App = () => (
-    <div>
-        <h1>Hello World!</h1>
+    <div className="container">
+        <h1 style={{textAlign: 'center'}}>The Factolculator</h1>
+
+        <hr />
+
+        <Calculator />
     </div>
 );
 
