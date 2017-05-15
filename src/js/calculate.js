@@ -23,7 +23,7 @@ const getItemTree = function(item, perMinute, assemblerSpeed, furnaceSpeed, tota
         crafting = {
             producedBy: itemData.recipe.producedBy,
             producerAmount: ((itemData.recipe.time / itemData.recipe.units) / craftingSpeed) / (60 / perMinute),
-            ingredients: itemData.recipe.ingredients.map(({item: ingrItem, amount}) => {
+            ingredients: itemData.recipe.ingredients.map(([amount, ingrItem]) => {
                 return getItemTree(
                     ingrItem,
                     perMinute / itemData.recipe.units * amount,
