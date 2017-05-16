@@ -11,6 +11,19 @@ export default {
             ]
         }
     },
+    activeProviderChest: {
+        name: 'Active provider chest',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 0.5,
+            ingredients: [
+                [1, 'steelChest'],
+                [3, 'electronicCircuit'],
+                [1, 'advancedCircuit']
+            ]
+        }
+    },
     advancedCircuit: {
         name: 'Advanced circuit',
         recipe: {
@@ -63,6 +76,31 @@ export default {
             ]
         }
     },
+    assemblingMachine3: {
+        name: 'Assembling machine 3',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 0.5,
+            ingredients: [
+                [4, 'speedModule'],
+                [2, 'assemblingMachine2']
+            ]
+        }
+    },
+    atomicBomb: {
+        name: 'Atomic bomb',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 50,
+            ingredients: [
+                [20, 'processingUnit'],
+                [10, 'explosives'],
+                [30, 'uranium235']
+            ]
+        }
+    },
     battery: {
         name: 'Battery',
         recipe: {
@@ -85,6 +123,32 @@ export default {
             ingredients: [
                 [5, 'battery'],
                 [10, 'steelPlate']
+            ]
+        }
+    },
+    batteryModuleMK2: {
+        name: 'Battery MK2 (module)',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 10,
+            ingredients: [
+                [10, 'batteryModule'],
+                [20, 'processingUnit']
+            ]
+        }
+    },
+    beacon: {
+        name: 'Beacon',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 15,
+            ingredients: [
+                [20, 'electronicCircuit'],
+                [20, 'advancedCircuit'],
+                [10, 'steelPlate'],
+                [10, 'copperCable']
             ]
         }
     },
@@ -176,6 +240,20 @@ export default {
             ]
         }
     },
+    centrifuge: {
+        name: 'Centrifuge',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 4,
+            ingredients: [
+                [100, 'concrete'],
+                [50, 'steelPlate'],
+                [100, 'advancedCircuit'],
+                [100, 'ironGearWheel']
+            ]
+        }
+    },
     chemicalPlant: {
         name: 'Chemical plant',
         recipe: {
@@ -187,6 +265,19 @@ export default {
                 [5, 'ironGearWheel'],
                 [5, 'electronicCircuit'],
                 [5, 'pipe']
+            ]
+        }
+    },
+    clusterGrenade: {
+        name: 'Cluster grenade',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 8,
+            ingredients: [
+                [7, 'grenade'],
+                [5, 'explosives'],
+                [5, 'steelPlate']
             ]
         }
     },
@@ -281,6 +372,67 @@ export default {
             ]
         }
     },
+    defenderCapsule: {
+        name: 'Defender capsule',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 8,
+            ingredients: [
+                [1, 'piercingRoundsMagazine'],
+                [2, 'electronicCircuit'],
+                [3, 'ironGearWheel']
+            ]
+        }
+    },
+    destroyerCapsule: {
+        name: 'Destroyer capsule',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 15,
+            ingredients: [
+                [4, 'distractorCapsule'],
+                [1, 'speedModule']
+            ]
+        }
+    },
+    dischargeDefense: {
+        name: 'Discharge defense',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 10,
+            ingredients: [
+                [5, 'processingUnit'],
+                [20, 'steelPlate'],
+                [10, 'laserTurret']
+            ]
+        }
+    },
+    dischargeDefenseRemote: {
+        name: 'Discharge defense remote',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 0.5,
+            ingredients: [
+                [1, 'electronicCircuit']
+            ]
+        }
+    },
+    distractorCapsule: {
+        name: 'Distractor capsule',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 15,
+            ingredients: [
+                [4, 'defenderCapsule'],
+                [3, 'advancedCircuit']
+            ]
+        }
+    },
     efficiencyModule: {
         name: 'Efficiency module',
         recipe: {
@@ -301,6 +453,19 @@ export default {
             time: 30,
             ingredients: [
                 [4, 'efficiencyModule'],
+                [5, 'advancedCircuit'],
+                [5, 'processingUnit']
+            ]
+        }
+    },
+    efficiencyModule3: {
+        name: 'Efficiency module 3',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 60,
+            ingredients: [
+                [5, 'efficiencyModule2'],
                 [5, 'advancedCircuit'],
                 [5, 'processingUnit']
             ]
@@ -368,6 +533,30 @@ export default {
             ]
         }
     },
+    energyShield: {
+        name: 'Energy shield',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 10,
+            ingredients: [
+                [5, 'advancedCircuit'],
+                [10, 'steelPlate']
+            ]
+        }
+    },
+    energyShieldMK2: {
+        name: 'Energy shield MK2',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 10,
+            ingredients: [
+                [10, 'energyShield'],
+                [10, 'processingUnit']
+            ]
+        }
+    },
     engineUnit: {
         name: 'Engine unit',
         recipe: {
@@ -378,6 +567,19 @@ export default {
                 [1, 'steelPlate'],
                 [1, 'ironGearWheel'],
                 [2, 'pipe']
+            ]
+        }
+    },
+    exoskeleton: {
+        name: 'Exoskeleton',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 10,
+            ingredients: [
+                [10, 'processingUnit'],
+                [30, 'electricEngineUnit'],
+                [20, 'steelPlate']
             ]
         }
     },
@@ -404,6 +606,70 @@ export default {
                 [2, 'steelPlate'],
                 [2, 'plasticBar'],
                 [2, 'explosives']
+            ]
+        }
+    },
+    explosiveRocket: {
+        name: 'Explosive rocket',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 8,
+            ingredients: [
+                [1, 'rocket'],
+                [2, 'explosives']
+            ]
+        }
+    },
+    explosiveUraniumCannonShell: {
+        name: 'Explosive uranium cannon shell',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 12,
+            ingredients: [
+                [1, 'explosiveCannonShell'],
+                [1, 'uranium238']
+            ]
+        }
+    },
+    expressSplitter: {
+        name: 'Express splitter',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 2,
+            ingredients: [
+                [1, 'fastSplitter'],
+                [10, 'ironGearWheel'],
+                [10, 'advancedCircuit'],
+                [80, 'lubricant']
+            ]
+        }
+    },
+    expressTransportBelt: {
+        name: 'Express transport belt',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 0.5,
+            ingredients: [
+                [10, 'ironGearWheel'],
+                [1, 'fastTransportBelt'],
+                [20, 'lubricant']
+            ]
+        }
+    },
+    expressUndergroundBelt: {
+        name: 'Express underground belt',
+        recipe: {
+            producedBy: 'assembler',
+            units: 2,
+            time: 0.5,
+            ingredients: [
+                [80, 'ironGearWheel'],
+                [2, 'fastUndergroundBelt'],
+                [40, 'lubricant']
             ]
         }
     },
@@ -608,6 +874,31 @@ export default {
             ]
         }
     },
+    heatExchanger: {
+        name: 'Heat exchanger',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 0.5,
+            ingredients: [
+                [10, 'steelPlate'],
+                [100, 'copperPlate'],
+                [10, 'pipe']
+            ]
+        }
+    },
+    heatPipe: {
+        name: 'Heat pipe',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 0.5,
+            ingredients: [
+                [10, 'steelPlate'],
+                [20, 'copperPlate']
+            ]
+        }
+    },
     heavyArmor: {
         name: 'Heavy armor',
         recipe: {
@@ -735,6 +1026,18 @@ export default {
             ]
         }
     },
+    landMine: {
+        name: 'Land mine',
+        recipe: {
+            producedBy: 'assembler',
+            units: 4,
+            time: 5,
+            ingredients: [
+                [1, 'steelPlate'],
+                [2, 'explosives']
+            ]
+        }
+    },
     landfill: {
         name: 'Landfill',
         recipe: {
@@ -743,6 +1046,19 @@ export default {
             time: 0.5,
             ingredients: [
                 [20, 'stone']
+            ]
+        }
+    },
+    laserTurret: {
+        name: 'Laser turret',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 20,
+            ingredients: [
+                [20, 'steelPlate'],
+                [20, 'electronicCircuit'],
+                [12, 'battery']
             ]
         }
     },
@@ -795,6 +1111,19 @@ export default {
                 [1, 'ironGearWheel'],
                 [1, 'ironPlate'],
                 [1, 'inserter']
+            ]
+        }
+    },
+    lowDensityStructure: {
+        name: 'Low density structure',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 30,
+            ingredients: [
+                [10, 'steelPlate'],
+                [5, 'copperPlate'],
+                [5, 'plasticBar']
             ]
         }
     },
@@ -858,6 +1187,20 @@ export default {
             ]
         }
     },
+    nuclearReactor: {
+        name: 'Nuclear reactor',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 4,
+            ingredients: [
+                [500, 'concrete'],
+                [500, 'steelPlate'],
+                [500, 'advancedCircuit'],
+                [500, 'copperPlate']
+            ]
+        }
+    },
     offshorePump: {
         name: 'Offshore pump',
         recipe: {
@@ -899,6 +1242,19 @@ export default {
             ]
         }
     },
+    personalLaserDefense: {
+        name: 'Personal laser defense',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 10,
+            ingredients: [
+                [1, 'processingUnit'],
+                [5, 'steelPlate'],
+                [5, 'laserTurret']
+            ]
+        }
+    },
     personalRoboport: {
         name: 'Personal roboport',
         recipe: {
@@ -910,6 +1266,18 @@ export default {
                 [40, 'ironGearWheel'],
                 [20, 'steelPlate'],
                 [45, 'battery']
+            ]
+        }
+    },
+    personalRoboportMK2: {
+        name: 'Personal roboport MK2',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 20,
+            ingredients: [
+                [5, 'personalRoboport'],
+                [100, 'processingUnit']
             ]
         }
     },
@@ -926,6 +1294,19 @@ export default {
                 [1, 'firearmMagazine'],
                 [1, 'steelPlate'],
                 [5, 'copperPlate']
+            ]
+        }
+    },
+    piercingShotgunShells: {
+        name: 'Piercing shotgun shells',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 8,
+            ingredients: [
+                [2, 'shotgunShells'],
+                [5, 'copperPlate'],
+                [2, 'steelPlate']
             ]
         }
     },
@@ -989,6 +1370,17 @@ export default {
             ]
         }
     },
+    portableFusionReactor: {
+        name: 'Portable fusion reactor',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 10,
+            ingredients: [
+                [250, 'processingUnit']
+            ]
+        }
+    },
     portableSolarPanel: {
         name: 'Portable solar panel',
         recipe: {
@@ -1011,6 +1403,20 @@ export default {
             ingredients: [
                 [40, 'processingUnit'],
                 [20, 'electricEngineUnit'],
+                [40, 'steelPlate']
+            ]
+        }
+    },
+    powerArmorMK2: {
+        name: 'Power armor MK2',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 25,
+            ingredients: [
+                [5, 'efficiencyModule3'],
+                [5, 'speedModule3'],
+                [40, 'processingUnit'],
                 [40, 'steelPlate']
             ]
         }
@@ -1074,6 +1480,19 @@ export default {
             time: 30,
             ingredients: [
                 [4, 'productivityModule'],
+                [5, 'advancedCircuit'],
+                [5, 'processingUnit']
+            ]
+        }
+    },
+    productivityModule3: {
+        name: 'Productivity module 3',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 60,
+            ingredients: [
+                [5, 'productivityModule2'],
                 [5, 'advancedCircuit'],
                 [5, 'processingUnit']
             ]
@@ -1183,6 +1602,19 @@ export default {
             ]
         }
     },
+    requesterChest: {
+        name: 'Requester chest',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 0.5,
+            ingredients: [
+                [1, 'steelChest'],
+                [3, 'electronicCircuit'],
+                [1, 'advancedCircuit']
+            ]
+        }
+    },
     roboport: {
         name: 'Roboport',
         recipe: {
@@ -1193,6 +1625,99 @@ export default {
                 [45, 'steelPlate'],
                 [45, 'ironGearWheel'],
                 [45, 'advancedCircuit']
+            ]
+        }
+    },
+    rocket: {
+        name: 'Rocket',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 8,
+            ingredients: [
+                [1, 'electronicCircuit'],
+                [1, 'explosives'],
+                [2, 'ironPlate']
+            ]
+        }
+    },
+    rocketControlUnit: {
+        name: 'Rocket control unit',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 30,
+            ingredients: [
+                [1, 'processingUnit'],
+                [1, 'speedModule']
+            ]
+        }
+    },
+    rocketFuel: {
+        name: 'Rocket fuel',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 30,
+            ingredients: [
+                [10, 'solidFuel']
+            ]
+        }
+    },
+    rocketLauncher: {
+        name: 'Rocket launcher',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 10,
+            ingredients: [
+                [5, 'ironPlate'],
+                [5, 'ironGearWheel'],
+                [5, 'electronicCircuit']
+            ]
+        }
+    },
+    rocketPart: {
+        name: 'Rocket part',
+        recipe: {
+            producedBy: 'rocketSilo',
+            units: 1,
+            time: 3,
+            ingredients: [
+                [10, 'lowDensityStructure'],
+                [10, 'rocketFuel'],
+                [10, 'rocketControlUnit']
+            ]
+        }
+    },
+    rocketSilo: {
+        name: 'Rocket silo',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 30,
+            ingredients: [
+                [1000, 'steelPlate'],
+                [1000, 'concrete'],
+                [100, 'pipe'],
+                [200, 'processingUnit'],
+                [200, 'electricEngineUnit']
+            ]
+        }
+    },
+    satellite: {
+        name: 'Satellite',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 3,
+            ingredients: [
+                [100, 'lowDensityStructure'],
+                [100, 'solarPanel'],
+                [100, 'accumulator'],
+                [5, 'radar'],
+                [100, 'processingUnit'],
+                [50, 'rocketFuel']
             ]
         }
     },
@@ -1335,6 +1860,19 @@ export default {
             ]
         }
     },
+    speedModule3: {
+        name: 'Speed module 3',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 60,
+            ingredients: [
+                [5, 'speedModule2'],
+                [5, 'advancedCircuit'],
+                [5, 'processingUnit']
+            ]
+        }
+    },
     splitter: {
         name: 'Splitter',
         recipe: {
@@ -1384,6 +1922,19 @@ export default {
                 [8, 'ironGearWheel'],
                 [5, 'pipe'],
                 [10, 'ironPlate']
+            ]
+        }
+    },
+    steamTurbine: {
+        name: 'Steam turbine',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 0.5,
+            ingredients: [
+                [50, 'ironGearWheel'],
+                [50, 'copperPlate'],
+                [20, 'pipe']
             ]
         }
     },
@@ -1606,6 +2157,68 @@ export default {
             ingredients: [
                 [10, 'ironPlate'],
                 [5, 'transportBelt']
+            ]
+        }
+    },
+    uranium235: {
+        name: 'Uranium-235',
+        recipe: {
+            producedBy: 'centrifuge',
+            units: 0.007,
+            time: 10,
+            ingredients: [
+                [10, 'uraniumOre']
+            ]
+        }
+    },
+    uranium238: {
+        name: 'Uranium-238',
+        recipe: {
+            producedBy: 'centrifuge',
+            units: 0.993,
+            time: 10,
+            ingredients: [
+                [10, 'uraniumOre']
+            ]
+        }
+    },
+    uraniumCannonShell: {
+        name: 'Uranium cannon shell',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 12,
+            ingredients: [
+                [1, 'cannonShell'],
+                [1, 'uranium238']
+            ]
+        }
+    },
+    uraniumFuelCell: {
+        name: 'Uranium fuel cell',
+        recipe: {
+            producedBy: 'assembler',
+            units: 10,
+            time: 10,
+            ingredients: [
+                [10, 'ironPlate'],
+                [1, 'uranium235'],
+                [19, 'uranium238']
+            ]
+        }
+    },
+    uraniumOre: {
+        name: 'Uranium ore'
+    },
+    uraniumRoundsMagazine: {
+        name: 'Uranium rounds magazine',
+        recipe: {
+            producedBy: 'assembler',
+            units: 1,
+            time: 10,
+            ingredients: [
+                [1, 'piercingRoundsMagazine'],
+                [1, 'uranium238']
             ]
         }
     },
