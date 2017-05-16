@@ -71,9 +71,7 @@ export default class CalculatorResults extends Component {
                 &nbsp;•&nbsp;
                 {tree.perMinute}/m
                 &nbsp;•&nbsp;
-                <span title={tree.crafting.producerAmount}>{tree.crafting.producerAmount.toFixed(1)}</span>
-                &nbsp;
-                {tree.crafting.producedBy}(s)
+                {this.renderAmount(tree.crafting.producerAmount)} {tree.crafting.producedBy}(s)
 
                 <ul>
                     {tree.crafting.ingredients.map(i => this.renderTree(i))}
@@ -100,11 +98,17 @@ export default class CalculatorResults extends Component {
                     &nbsp;•&nbsp;
                     {t.perMinute}/m
                     &nbsp;•&nbsp;
-                    <span title={t.crafting.producerAmount}>{t.crafting.producerAmount.toFixed(1)}</span>
-                    &nbsp;
-                    {t.crafting.producedBy}(s)
+                    {this.renderAmount(t.crafting.producerAmount)} {t.crafting.producedBy}(s)
                 </li>
             );
         });
+    }
+
+    renderAmount(amount) {
+        if (Math.round(amount) === amount) {
+            return <span>{amount}</span>;
+        }
+
+        return <span title={amount}>{amount.toFixed(1)}</span>;
     }
 }
