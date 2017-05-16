@@ -13,10 +13,10 @@ help:
 	@echo
 
 build: copy_assets
-	NODE_ENV=production $(NODEBIN)/webpack --optimize-minimize --output-public-path /assets/ src/js/index.js dist/assets/bundle.js
+	NODE_ENV=production $(NODEBIN)/webpack --optimize-minimize --output-public-path assets/ src/js/index.js dist/assets/bundle.js
 
 server: copy_assets
-	NODE_ENV=development $(NODEBIN)/webpack-dev-server --content-base dist/ --output-public-path /assets/ --devtool source-map --watch-poll --inline src/js/index.js
+	NODE_ENV=development $(NODEBIN)/webpack-dev-server --content-base dist/ --output-public-path assets/ --devtool source-map --watch-poll --inline src/js/index.js
 
 copy_assets:
 	rm -rf dist/
