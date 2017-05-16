@@ -17,7 +17,7 @@ const ASSEMBLER_TYPES = {
     },
     '3': {
         name: 'Assembling machine 3',
-        speed: 1
+        speed: 1.25
     }
 };
 
