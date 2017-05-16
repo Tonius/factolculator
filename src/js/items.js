@@ -1298,7 +1298,7 @@ export default {
         }
     },
     solidFuel: {
-        name: 'Flamethrower ammo',
+        name: 'Solid fuel',
         recipe: {
             producedBy: 'chemicalPlant',
             units: 1,
