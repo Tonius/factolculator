@@ -2161,26 +2161,10 @@ export default {
         }
     },
     uranium235: {
-        name: 'Uranium-235',
-        recipe: {
-            producedBy: 'centrifuge',
-            units: 0.007,
-            time: 10,
-            ingredients: [
-                [10, 'uraniumOre']
-            ]
-        }
+        name: 'Uranium-235'
     },
     uranium238: {
-        name: 'Uranium-238',
-        recipe: {
-            producedBy: 'centrifuge',
-            units: 0.993,
-            time: 10,
-            ingredients: [
-                [10, 'uraniumOre']
-            ]
-        }
+        name: 'Uranium-238'
     },
     uraniumCannonShell: {
         name: 'Uranium cannon shell',
