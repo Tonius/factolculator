@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Col, Grid, Row} from 'react-bootstrap';
+import sortBy from 'lodash.sortby';
 
 import calculate from 'src/calculate';
 import {mapObject} from 'src/utils';
 
+
+const separator = <span style={{marginLeft: '6px', marginRight: '6px'}}>•</span>;
 
 export default class CalculatorResults extends Component {
     static propTypes = {
@@ -54,54 +57,63 @@ export default class CalculatorResults extends Component {
         );
     }
 
-    renderTree(tree) {
-        if (tree.crafting === null) {
-            return (
-                <li key={tree.item} style={{marginLeft: '-15px'}}>
-                    <strong>{tree.itemName}</strong>
-                    &nbsp;•&nbsp;
-                    {tree.perMinute}/m
-                </li>
-            );
-        }
-
+    renderTree(data) {
         return (
-            <li key={tree.item} style={{marginLeft: '-15px'}}>
-                <strong>{tree.itemName}</strong>
-                &nbsp;•&nbsp;
-                {tree.perMinute}/m
-                &nbsp;•&nbsp;
-                {this.renderAmount(tree.crafting.producerAmount)} {tree.crafting.producedBy}(s)
+            <li key={data.item} style={{marginLeft: '-15px'}}>
+                <strong>{data.itemName}</strong>
+                {separator}
+                {this.renderAmount(data.perMinute)}/m
 
-                <ul>
-                    {tree.crafting.ingredients.map(i => this.renderTree(i))}
-                </ul>
+                {this.renderTreeItemCrafting(data)}
             </li>
         );
     }
 
-    renderTotals(totals) {
-        return mapObject(totals, (t, item) => {
-            if (t.crafting === null) {
-                return (
-                    <li key={item} style={{marginLeft: '-15px'}}>
-                        <strong>{t.itemName}</strong>
-                        &nbsp;•&nbsp;
-                        {t.perMinute}/m
-                    </li>
-                );
-            }
+    renderTreeItemCrafting(data) {
+        if (data.crafting === null) {
+            return null;
+        }
 
+        return (
+            <span>
+                {separator}
+                {this.renderAmount(data.crafting.producerAmount)} {data.crafting.producedBy}(s)
+
+                <ul>
+                    {data.crafting.ingredients.map(i => this.renderTree(i))}
+                </ul>
+            </span>
+        );
+    }
+
+    renderTotals(totals) {
+        let list = mapObject(totals, (data, item) => ({...data, item}));
+        list = sortBy(list, data => data.itemName);
+
+        return list.map(data => {
             return (
-                <li key={item} style={{marginLeft: '-15px'}}>
-                    <strong>{t.itemName}</strong>
-                    &nbsp;•&nbsp;
-                    {t.perMinute}/m
-                    &nbsp;•&nbsp;
-                    {this.renderAmount(t.crafting.producerAmount)} {t.crafting.producedBy}(s)
+                <li key={data.item} style={{marginLeft: '-15px'}}>
+                    <strong>{data.itemName}</strong>
+                    {separator}
+                    {this.renderAmount(data.perMinute)}/m
+
+                    {this.renderTotalItemCrafting(data)}
                 </li>
             );
         });
+    }
+
+    renderTotalItemCrafting(data) {
+        if (data.crafting === null) {
+            return null;
+        }
+
+        return (
+            <span>
+                {separator}
+                {this.renderAmount(data.crafting.producerAmount)} {data.crafting.producedBy}(s)
+            </span>
+        );
     }
 
     renderAmount(amount) {
