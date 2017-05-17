@@ -77,7 +77,7 @@ export default class CalculatorResults extends Component {
         return (
             <span>
                 {separator}
-                {this.renderAmount(data.crafting.producerAmount)} {data.crafting.producedBy}(s)
+                {this.renderProduction(data.crafting.producedBy, data.crafting.producerAmount)}
 
                 <ul>
                     {data.crafting.ingredients.map(i => this.renderTree(i))}
@@ -111,9 +111,15 @@ export default class CalculatorResults extends Component {
         return (
             <span>
                 {separator}
-                {this.renderAmount(data.crafting.producerAmount)} {data.crafting.producedBy}(s)
+                {this.renderProduction(data.crafting.producedBy, data.crafting.producerAmount)}
             </span>
         );
+    }
+
+    renderProduction(producedBy, producerAmount) {
+        producedBy = producedBy.match(/[A-Za-z][a-z]*/g).map(word => word.toLowerCase()).join(' ');
+
+        return <span>{this.renderAmount(producerAmount)} {producedBy}{producerAmount === 1 ? null : 's'}</span>;
     }
 
     renderAmount(amount) {
