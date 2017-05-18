@@ -21,7 +21,7 @@ server: copy_assets
 copy_assets:
 	rm -rf dist/
 	mkdir -p dist/
-	cp src/index.html dist/
+	cp src/static/* dist/
 	sed -i 's/_ANTI_CACHING_HASH_/$(ANTI_CACHING_HASH)/g' dist/index.html
 
 lint:
