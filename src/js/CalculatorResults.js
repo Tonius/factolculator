@@ -119,7 +119,11 @@ export default class CalculatorResults extends Component {
     renderProduction(producedBy, producerAmount) {
         producedBy = producedBy.match(/[A-Za-z][a-z]*/g).map(word => word.toLowerCase()).join(' ');
 
-        return <span>{this.renderAmount(producerAmount)} {producedBy}{producerAmount === 1 ? null : 's'}</span>;
+        return (
+            <span>
+                {this.renderAmount(producerAmount)} {producedBy}{Math.ceil(producerAmount) === 1 ? null : 's'}
+            </span>
+        );
     }
 
     renderAmount(amount) {
@@ -127,6 +131,6 @@ export default class CalculatorResults extends Component {
             return <span>{amount}</span>;
         }
 
-        return <span title={amount}>{amount.toFixed(1)}</span>;
+        return <span title={amount}>{Math.ceil(amount)}</span>;
     }
 }
