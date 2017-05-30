@@ -282,7 +282,13 @@ export default {
         }
     },
     coal: {
-        name: 'Coal'
+        name: 'Coal',
+        recipe: {
+            producedBy: 'miningDrill',
+            units: 1,
+            time: 1.9058,
+            ingredients: []
+        }
     },
     combatShotgun: {
         name: 'Combat shotgun',
@@ -347,7 +353,13 @@ export default {
         }
     },
     copperOre: {
-        name: 'Copper ore'
+        name: 'Copper ore',
+        recipe: {
+            producedBy: 'miningDrill',
+            units: 1,
+            time: 1.9058,
+            ingredients: []
+        }
     },
     copperPlate: {
         name: 'Copper plate',
@@ -976,7 +988,13 @@ export default {
         }
     },
     ironOre: {
-        name: 'Iron ore'
+        name: 'Iron ore',
+        recipe: {
+            producedBy: 'miningDrill',
+            units: 1,
+            time: 1.9058,
+            ingredients: []
+        }
     },
     ironPlate: {
         name: 'Iron plate',
@@ -1985,7 +2003,13 @@ export default {
         }
     },
     stone: {
-        name: 'Stone'
+        name: 'Stone',
+        recipe: {
+            producedBy: 'miningDrill',
+            units: 1,
+            time: 1.5385,
+            ingredients: []
+        }
     },
     stoneBrick: {
         name: 'Stone brick',
@@ -2192,7 +2216,15 @@ export default {
         }
     },
     uraniumOre: {
-        name: 'Uranium ore'
+        name: 'Uranium ore',
+        recipe: {
+            producedBy: 'miningDrill',
+            units: 1,
+            time: 1.9058,
+            ingredients: [
+                [1, 'sulfuricAcid']
+            ]
+        }
     },
     uraniumRoundsMagazine: {
         name: 'Uranium rounds magazine',
@@ -2207,7 +2239,13 @@ export default {
         }
     },
     water: {
-        name: 'Water'
+        name: 'Water',
+        recipe: {
+            producedBy: 'offshorePump',
+            units: 1200,
+            time: 1,
+            ingredients: []
+        }
     },
     wood: {
         name: 'Wood',
