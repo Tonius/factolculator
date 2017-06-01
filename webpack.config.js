@@ -26,11 +26,6 @@ module.exports = {
             }
         ]
     },
-    resolve: {
-        alias: {
-            src: path.resolve(__dirname, 'src', 'js')
-        }
-    },
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {

@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Button, Col, ControlLabel, FormControl, FormGroup, Grid, Row} from 'react-bootstrap';
 
-import ITEMS from 'src/items';
-import {mapObject} from 'src/utils';
+import ITEMS from './items';
+import {mapObject} from './utils';
 
 
 const ASSEMBLER_TYPES = {

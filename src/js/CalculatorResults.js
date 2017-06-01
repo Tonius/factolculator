@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {Col, Grid, Row} from 'react-bootstrap';
 import sortBy from 'lodash.sortby';
 
-import calculate from 'src/calculate';
-import {mapObject} from 'src/utils';
+import calculate from './calculate';
+import {mapObject} from './utils';
 
 
 const separator = <span style={{marginLeft: '2px', marginRight: '2px'}}> • </span>;

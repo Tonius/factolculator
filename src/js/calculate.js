@@ -1,4 +1,4 @@
-import ITEMS from 'src/items';
+import ITEMS from './items';
 
 
 const getItemTree = function(item, perMinute, assemblerSpeed, furnaceSpeed, totals) {
