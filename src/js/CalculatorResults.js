@@ -7,7 +7,7 @@ import calculate from 'src/calculate';
 import {mapObject} from 'src/utils';
 
 
-const separator = <span style={{marginLeft: '6px', marginRight: '6px'}}>•</span>;
+const separator = <span style={{marginLeft: '2px', marginRight: '2px'}}> • </span>;
 
 export default class CalculatorResults extends Component {
     static propTypes = {
@@ -58,31 +58,19 @@ export default class CalculatorResults extends Component {
     }
 
     renderTree(data) {
-        return (
-            <li key={data.item} style={{marginLeft: '-15px'}}>
-                <strong>{data.itemName}</strong>
-                {separator}
-                {this.renderAmount(data.perMinute)}/m
-
-                {this.renderTreeItemCrafting(data)}
-            </li>
-        );
-    }
-
-    renderTreeItemCrafting(data) {
-        if (data.crafting === null) {
-            return null;
+        let ingredients = null;
+        if (data.crafting !== null) {
+            ingredients = <ul>{data.crafting.ingredients.map(i => this.renderTree(i))}</ul>;
         }
 
         return (
-            <span>
-                {separator}
-                {this.renderProduction(data.crafting.producedBy, data.crafting.producerAmount)}
-
-                <ul>
-                    {data.crafting.ingredients.map(i => this.renderTree(i))}
-                </ul>
-            </span>
+            <Item
+                key={data.item}
+                itemName={data.itemName}
+                perMinute={data.perMinute}
+                production={data.crafting}>
+                {ingredients}
+            </Item>
         );
     }
 
@@ -90,47 +78,92 @@ export default class CalculatorResults extends Component {
         let list = mapObject(totals, (data, item) => ({...data, item}));
         list = sortBy(list, data => data.itemName);
 
-        return list.map(data => {
-            return (
-                <li key={data.item} style={{marginLeft: '-15px'}}>
-                    <strong>{data.itemName}</strong>
-                    {separator}
-                    {this.renderAmount(data.perMinute)}/m
+        return list.map(data => (
+            <Item
+                key={data.item}
+                itemName={data.itemName}
+                perMinute={data.perMinute}
+                production={data.crafting} />
+        ));
+    }
+}
 
-                    {this.renderTotalItemCrafting(data)}
-                </li>
-            );
-        });
+
+class Item extends Component {
+    static propTypes = {
+        itemName: PropTypes.string.isRequired,
+        perMinute: PropTypes.number.isRequired,
+        production: PropTypes.shape({
+            producedBy: PropTypes.string.isRequired,
+            producerAmount: PropTypes.number.isRequired,
+        }),
+        children: PropTypes.node,
     }
 
-    renderTotalItemCrafting(data) {
-        if (data.crafting === null) {
-            return null;
-        }
+    static defaultProps = {
+        production: null,
+        children: null,
+    }
 
+    state = {
+        exactProducerAmountShown: false,
+    }
+
+    handleProducerAmountClick = () => {
+        this.setState({exactProducerAmountShown: !this.state.exactProducerAmountShown});
+    }
+
+    render() {
         return (
-            <span>
+            <li style={{marginLeft: '-15px'}}>
+                <strong>{this.props.itemName}</strong>
                 {separator}
-                {this.renderProduction(data.crafting.producedBy, data.crafting.producerAmount)}
-            </span>
+                {this.props.perMinute}/m
+
+                {this.renderProduction()}
+
+                {this.props.children}
+            </li>
         );
     }
 
-    renderProduction(producedBy, producerAmount) {
+    renderProduction() {
+        if (this.props.production === null) {
+            return null;
+        }
+
+        let {producedBy, producerAmount} = this.props.production;
+
         producedBy = producedBy.match(/[A-Za-z][a-z]*/g).map(word => word.toLowerCase()).join(' ');
 
         return (
             <span>
-                {this.renderAmount(producerAmount)} {producedBy}{Math.ceil(producerAmount) === 1 ? null : 's'}
+                {separator}
+                {this.renderProducerAmount(producerAmount)} {producedBy}{Math.ceil(producerAmount) === 1 ? null : 's'}
             </span>
         );
     }
 
-    renderAmount(amount) {
-        if (Math.round(amount) === amount) {
+    renderProducerAmount(amount) {
+        if (amount === Math.ceil(amount)) {
             return <span>{amount}</span>;
         }
 
-        return <span title={amount}>{Math.ceil(amount)}</span>;
+        let style = {
+            cursor: 'pointer',
+        };
+
+        if (this.state.exactProducerAmountShown) {
+            style.color = '#0000ff';
+        }
+
+        return (
+            <span
+                style={style}
+                onClick={this.handleProducerAmountClick}>
+                {this.state.exactProducerAmountShown ? null : '~'}
+                {this.state.exactProducerAmountShown ? amount : Math.ceil(amount)}
+            </span>
+        );
     }
 }
