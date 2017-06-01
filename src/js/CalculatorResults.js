@@ -136,10 +136,15 @@ class Item extends Component {
 
         producedBy = producedBy.match(/[A-Za-z][a-z]*/g).map(word => word.toLowerCase()).join(' ');
 
+        let plural = Math.ceil(producerAmount) !== 1;
+        if (this.state.exactProducerAmountShown) {
+            plural = producerAmount !== 1;
+        }
+
         return (
             <span>
                 {separator}
-                {this.renderProducerAmount(producerAmount)} {producedBy}{Math.ceil(producerAmount) === 1 ? null : 's'}
+                {this.renderProducerAmount(producerAmount)} {producedBy}{plural ? 's' : null}
             </span>
         );
     }
